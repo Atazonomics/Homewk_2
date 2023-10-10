@@ -99,3 +99,18 @@ for elem in [1, 5, 25]:
     productory *= elem
 
 
+def test_functions():
+    assert car_at_light('green') == 'go'
+    assert car_at_light('red') == 'stop'
+    assert car_at_light('yellow') == 'wait'
+    with pytest.raises(Exception):
+        car_at_light('greasdfen') == Exception
+    assert safe_subtract('asdf','asd') == None
+    assert safe_subtract(5,10) == -5
+    assert retrieve_age_lbyl({'name': 'John', 'last_name': 'Doe', 'birth': 1987}) == 1987
+    assert retrieve_age_lbyl({'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'}) == None 
+    assert retrieve_age_eafp({'name': 'John', 'last_name': 'Doe', 'birth': 1987}) == 1987
+    with pytest.raises(Exception):
+        assert retrieve_age_eafp({'name': 'Janet', 'last_name': 'Bird', 'gender': 'female'})
+    assert read_data('data.csv') is not None
+    assert read_data('data1.csv') is None
